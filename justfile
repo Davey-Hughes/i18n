@@ -59,7 +59,7 @@ run INPUT-DIR YEAR="20[0-9]\\{2\\}" DAY="[0-9]\\{2\\}":
       lines=$(cargo run --quiet --release $input_file)
       if [ -f "Cargo.toml" ]; then
         while read line; do
-          output+="$(echo $line | cut -d':' -f2 | xargs)\n";
+          output+="$(echo $line)\n";
         done <<< "$lines"
 
       fi
